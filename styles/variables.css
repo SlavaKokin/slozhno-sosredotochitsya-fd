@@ -1,4 +1,22 @@
-/*
+:root {
+  --main-font: 'IBM Plex mono';
+  --b-font-weight: 700;
+  --n-font-weight: 400;
+  --mob-accent-font-sise: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  --desk-accent-font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  --text-font-size: clamp(1.125rem, 1.125rem + 0vw, 1.125rem);
+  --bg-color: #000028;
+  --text-color-title: #000028;
+  --text-color: #F1B2CE;
+  --accent-title-color: #DB00FF;
+  --accent-color: #FF0070;
+  --content-title-color: #FF0070;
+  --decorated-zone-color: #FF0070;
+  --text--menu-color: #FF0070;
+  --button-hover-color: #FF007066;
+  --accent-button-color: #FF0070;
+  --bg-image-dark: url(../images/cover-image-dark.png);
+}/*
   Переменные для вашего проекта
   и их переопределение под различные устройства
 */

@@ -5,6 +5,17 @@
 */
 
 :root.theme-light {
+  --bg-color: #FFF1F7;
+  --text-color-title: #353430;
+  --text-color: #353430;
+  --accent-title-color: #FFC2E6;
+  --accent-color: #FF8DCB;
+  --content-title-color: #353430;
+  --decorated-zone-color: #353430;
+  --text--menu-color: #353430;
+  --button-hover-color: #32312D66;
+  --accent-button-color: #353430;
+  --bg-image-light: url(../images/cover-image-light.png);
   /* сохраните этот селектор в приведённом виде.
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
@@ -12,5 +23,41 @@
 }
 
 .theme-light .page {
+  background-image: var(--bg-image-light);
   /* Вам также нужно будет написать ряд подобных селекторов */
 }
+
+.theme-light .decoration-element {
+  display: none;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-color: #FFF1F7;
+    --text-color-title: #353430;
+    --text-color: #353430;
+    --accent-title-color: #FFC2E6;
+    --accent-color: #FF8DCB;
+    --content-title-color: #353430;
+    --decorated-zone-color: #353430;
+    --text--menu-color: #353430;
+    --button-hover-color: #32312D66;
+    --accent-button-color: #353430;
+    --bg-image-light: url(../images/cover-image-light.png);
+  }
+  
+  .page {
+    background-image: var(--bg-image-light);
+  }
+  
+  .decoration-element {
+    display: none;
+  }
+}
+
+
+
+
+
+
+
