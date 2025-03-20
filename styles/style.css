@@ -2,8 +2,6 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  max-inline-size: 375px;
-  max-block-size: 668px;
   font-family: var(--main-font, sans-serif);
   color: var(--text-color);
   background-color: var(--bg-color);
@@ -12,7 +10,6 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  padding: 10px;
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
 }
 
@@ -20,7 +17,11 @@
 .header {
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
-  max-block-size: 648px;
+  block-size: 100vh;
+  min-height: 668px;
+  align-items: center;
+  padding-block: 10px;
+  padding-inline: 10px;
 }
 
 /* Декоративные элементы header (footer) */
@@ -38,26 +39,34 @@
   width: 25px;
   border: 1px solid var(--decorated-zone-color);
 }
+
 .decorated-zone::before {
-  top: 0px; right: 0px;
+  top: 10px; 
+  right: 10px;
   border-width: 1px 1px 0 0;
 }
+
 .decorated-zone::after {
-  bottom: 0px; left: 0px;
+  bottom: 10px; 
+  left: 10px;
   border-width: 0 0 1px 1px ;
 }
-
+/* разобраться !!!!!!*/
 .decoration-element {
   display: flex;
+  align-items: center;
   position: absolute;
+  top: 10px;
+  margin-right: 9px;
+}
+
+.decoration-element::before {
+  content: 'REC';
   font-family: var(--main-font), sans-serif;
   font-weight: var(--n-font-weight);
   font-size: 18px;
   line-height: 25px;
   color: var(--accent-color);
-  justify-self: end;
-  gap: 10px;
-  right: 11px;
 }
 
 .decoration-element::after {
@@ -68,13 +77,11 @@
   box-shadow: 0px 0px 4px 4px rgba(255, 0, 112, 0.7);
   width: 9px;
   height: 9px;
-  align-self: center;
 }
 
 /* стилизуем меню переключения тем */
 .header__theme-menu {
-  justify-self: end;
-  align-self: center;
+  justify-items: end;
 }
 
 .header__theme-menu-list {
@@ -123,21 +130,19 @@
 
 /* Заголовок страницы и подзаголовок*/
 .header__accent-title {
-  justify-items: start;
   font-family: var(--main-font), sans-serif;
   font-weight: var(--b-font-weight);
   font-size: var(--mob-accent-font-sise);
   line-height: 83%;
   text-shadow: 4px 4px 0 var(--accent-color);
   color: var(--accent-title-color);
+
 }
 
 .title {
   font-family: var(--main-font), sans-serif;
   font-weight: var(--b-font-weight);
   font-size: var(--text-font-size);
-  justify-self: center;
-  align-self: center;
 }
 
 .title-decor {
@@ -146,12 +151,18 @@
 }
 
 /* Секции контента */
+.content {
+  display: grid;
+  gap: 50px;
+  margin-block-start: 40px;
+  margin-block-end: 40px;
+  padding-inline: 10px;
+}
+
 .content__section {
-  margin-top: 50px;
   display: grid;
   gap: 20px;
 }
-
 
 .content__section-title {
   font-weight: var(--b-font-weight);
@@ -160,11 +171,7 @@
   color: var(--content-title-color);
 }
 
-.content__section-article h4:not(:first-child){
-  margin-top: 20px;
-}
-
-.content__section-special .content__section-article {
+.content__section-article {
   display: grid;
   gap: 20px;
 }
@@ -179,7 +186,6 @@
   font-weight: var(--n-font-weight);
   font-size: var(--text-font-size);
   line-height: 23.4px;
-  margin-top: 20px;
 }
 
 .content__section-text {
@@ -208,13 +214,13 @@
   border-bottom: 1px solid var(--text-color);
 }
 
-/* Секция галлереи */
+/* Секция галлереи !!!!!!!!!!!!!!!!*/
 .gallery {
-  margin-top: 50px;
+  display: grid;
+  gap: 10px;
 }
 
 .gallery__list {
-  margin-top: 10px;
   display: grid;
   gap: 10px;
 }
@@ -230,9 +236,11 @@
 /* Footer */
 
 .footer {
-  margin-top: 50px;
   display: grid;
-  max-block-size: 648px;
+  height: 100vh;
+  min-height: 668px;
+  padding-block: 10px;
+  padding-inline: 10px;
 }
 
 .footer__accent-title {
@@ -247,14 +255,10 @@
 
 /* Медиазапрос для расширения больше 768 пикселей */
 @media (width >= 768px) {
-  .page {
-  min-inline-size: 768px;
-  min-block-size: 1024px;
-  padding: 20px;
-  }
-
   .header {
-    max-block-size: 984px;
+    min-height: 1024px;
+    padding-block: 20px;
+    padding-inline: 20px;
   }
 
   .header__theme-menu {
@@ -268,15 +272,35 @@
     align-self: center;
   }
 
+  .decoration-element {
+    top: 20px;
+    margin-right: 19px;
+  }
+
+  .decorated-zone::before {
+    top: 20px; 
+    right: 20px;
+  }
+  
+  .decorated-zone::after {
+    bottom: 20px; 
+    left: 20px;
+  }
+
   .title {
     justify-self: end;
     align-self: center;
     max-inline-size: 50%;
-    width: 100%;
+  }
+
+  .content {
+    gap: 80px;
+    margin-block-start: 60px;
+    margin-block-end: 60px;
+    padding-inline: 20px;
   }
 
   .content__section {
-    margin-top: 80px;
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 20px;
@@ -295,11 +319,10 @@
   }
 
   .gallery {
-    margin-top: 80px;
+    gap: 20px;
   }
 
   .gallery__list {
-    margin-top: 20px;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3,1fr);
     gap: 20px;
@@ -320,8 +343,9 @@
   }
 
   .footer {
-    margin-top: 80px;
-    max-block-size: 984px;
+    min-height: 1024px;
+    padding-block: 20px;
+    padding-inline: 20px;
   }
 
   .footer__accent-title {
@@ -332,14 +356,10 @@
 
 /* Медиазапрос для расширения больше 1024 пикселей */
 @media (width >= 1024px) {
-  .page {
-    min-inline-size: 1024px;
-    min-block-size: 768px;
-    padding: 20px;
-  }
-
   .header {
-    max-block-size: 728px;
+    min-height: 768px;
+    padding-block: 20px;
+    padding-inline: 20px;
   }
 
   .header__theme-menu {
@@ -348,17 +368,16 @@
   }
 
   .header__theme-menu-list {
-    display: flex;
     flex-direction: row;
-    gap: 10px;
   }
 
   .content__section {
-    column-gap: 10px;
+    gap: 10px;
   }
 
   .content__section-special {
     grid-template-columns: 1fr 2fr;
+    gap: 20px;
   }
 
   .content__section-special .content__section-article {
@@ -366,12 +385,11 @@
   }
 
   .gallery__list {
-    max-block-size: 1048px;
+    max-height: 1048px;
   }
 
   .footer {
-    margin-top: 80px;
-    max-block-size: 728px;
+    min-height: 768px;
   }
 }
 
