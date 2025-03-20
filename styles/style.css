@@ -51,13 +51,16 @@
   left: 10px;
   border-width: 0 0 1px 1px ;
 }
-/* разобраться !!!!!!*/
+
+/*Стилизация REC*/
 .decoration-element {
   display: flex;
   align-items: center;
   position: absolute;
+  justify-self: end;
   top: 10px;
-  margin-right: 9px;
+  gap: 10px;
+  right: 19px;
 }
 
 .decoration-element::before {
@@ -106,7 +109,7 @@
   border: none;
 }
 
-/* состояния кнопок меню*/
+/*состояния кнопок меню*/
 .header__theme-menu-button:hover {
   outline: 1px solid var(--button-hover-color);
 }
@@ -136,7 +139,6 @@
   line-height: 83%;
   text-shadow: 4px 4px 0 var(--accent-color);
   color: var(--accent-title-color);
-
 }
 
 .title {
@@ -274,7 +276,7 @@
 
   .decoration-element {
     top: 20px;
-    margin-right: 19px;
+    right: 29px;
   }
 
   .decorated-zone::before {

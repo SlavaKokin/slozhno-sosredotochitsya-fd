@@ -29,13 +29,17 @@
 
 .theme-dark .decoration-element {
   display: flex;
+  align-items: center;
   position: absolute;
-  font-family: var(--main-font), sans-serif;
-  font-weight: var(--n-font-weight);
-  font-size: 18px;
-  line-height: 25px;
-  color: var(--accent-color);
   justify-self: end;
+  top: 10px;
   gap: 10px;
-  right: 11px;
+  right: 19px;
+}
+
+@media (width >= 768px) {
+  .theme-dark .decoration-element {
+  top: 20px;
+  right: 29px;
+  }
 }
