@@ -16,6 +16,8 @@
   --button-hover-color: #FF007066;
   --accent-button-color: #FF0070;
   --bg-image-dark: url(../images/cover-image-dark.png);
+  --mob-padding: 10px;
+  --desk-padding: 20px;
 }/*
   Переменные для вашего проекта
   и их переопределение под различные устройства

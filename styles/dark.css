@@ -29,17 +29,4 @@
 
 .theme-dark .decoration-element {
   display: flex;
-  align-items: center;
-  position: absolute;
-  justify-self: end;
-  top: 10px;
-  gap: 10px;
-  right: 19px;
-}
-
-@media (width >= 768px) {
-  .theme-dark .decoration-element {
-  top: 20px;
-  right: 29px;
-  }
 }
